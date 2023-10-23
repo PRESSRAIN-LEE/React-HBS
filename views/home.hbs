@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-6">사용자</div>
+  <div class="col-6 d-flex justify-content-end"><a href='/adduser' type="'button" class="btn btn-primary align-self-center">사용자 추가</a></div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col" class="text-end">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows }}
+    <tr>
+      <th scope="row">{{ this.M_SEQ }}</th>
+      <td>{{ this.M_NAME}}</td>
+      <td>{{ this.M_ID}}</td>
+      <td class="text-end">
+        <a href="/viewuser/{{ this.M_SEQ }}" type="button" calss="btn btn-light btn-small"><i class="bi bi-eye"></i>보기</a>
+        <a href="/edituser/{{ this.M_SEQ }}" type="button" calss="btn btn-light btn-small"><i class="bi bi-pencil"></i>수정</a>
+        <a href="/{{ this.M_SEQ }}" type="button" calss="btn btn-light btn-small"><i class="bi bi-person-x"></i>삭제</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

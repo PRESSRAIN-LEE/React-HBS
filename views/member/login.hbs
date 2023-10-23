@@ -1,0 +1,57 @@
+<div class="container mt-4 col-md-4 form-floating">
+	{{#if alertMsg}}
+		<div class="alert alert-{{alertMsg.type}} alert-dismissible fade show" role="alert">
+			<strong>{{alertMsg.intro}}</strong> {{{alertMsg.message}}}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	{{/if}}
+
+	<form name="frm" method="POST" action="/member/login" class="row g-3 needs-validation" novalidate>
+		<input type="HIDDEN" name="returnUrl" id="returnUrl" value="{{ originalUrl }}">
+		<fieldset>
+			<legend>로그인</legend>
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="memberID" name="memberID" value="master" placeholder="아이디" required>
+				<label for="memberID" class="form-label">아이디</label>
+				<div class="invalid-feedback">아이디를 입력하세요.</div>
+			</div>
+
+			<div class="form-floating mb-3">
+				<input type="password" class="form-control" id="memberPass" name="memberPass" value="123456" placeholder="비밀번호" required>
+				<label for="memberPass" class="form-label">비밀번호</label>
+				<div class="invalid-feedback">비밀번호를 입력하세요.</div>
+			</div>
+			<div class="form-floating mb-3">
+			<button type="submit" class="btn btn-outline-dark">로그인</button>
+			</div>
+			<div class="mb-3">
+			<a href="/member/forgotId" class="btn btn-outline-info mb-1">ID를 찾아요.</a>
+			<a href="/member/forgotPw" class="btn btn-outline-danger mb-1">비밀번호를 몰라요.</a>
+			<a href="/member/join" class="btn btn-outline-success mb-1">ID가 없어요.</a>
+			</div>
+		</fieldset>
+	</form>
+</div>
+
+<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(() => {
+		'use strict'
+
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		const forms = document.querySelectorAll('.needs-validation')
+
+		// Loop over them and prevent submission
+		Array.from(forms).forEach(form => {
+			form.addEventListener('submit', event => {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+
+				form.classList.add('was-validated')
+			}, false)
+		})
+	})()
+</script>

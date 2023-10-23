@@ -1,0 +1,30 @@
+<div class="col-md-6 form-floating mb-3">
+	<input type="text" class="form-control" id="memberName" name="memberName" value="{{ M_NAME }}" placeholder="이름" required>
+	<label for="memberName" class="form-label">이름</label>
+	<div class="invalid-feedback">이름을 입력하세요.</div>
+</div>
+<div class="col-md-6 form-floating mb-3">
+	<input type="text" class="form-control col-md-3" id="memberId" name="memberId" value="{{ M_ID }}" placeholder="아이디" required>
+	<span class="invalid-feedback" id="id-message"></span>
+	<a href="javascript:dupId();" class="btn btn-outline-info mb-1">ID중복 확인</a>
+
+	<label for="memberId" class="form-label">아이디</label>
+	<div class="invalid-feedback">아이디를 입력하세요.</div>
+</div>
+
+<div class="col-md-6 form-floating mb-3">
+	<input type="password" class="form-control" id="memberPw" name="memberPw" placeholder="비밀번호" required>
+	<label for="memberPw" class="form-label">비밀번호</label>
+	<div class="invalid-feedback">비밀번호를 입력하세요.</div>
+</div>
+<div class="col-md-6 form-floating mb-3">
+	<input type="password" class="form-control" id="memberPwChk" name="memberPwChk" placeholder="비밀번호 확인" required>
+	<label for="memberPwChk" class="form-label">비밀번호 확인</label>
+	<div class="invalid-feedback">확인 비밀번호를 입력하세요.</div>
+</div>
+
+<div class="form-floating mb-3">
+	<input type="email" class="form-control" id="memberMail" name="memberMail" value="{{ M_MAIL }}" placeholder="이메일" required>
+	<label for="memberMail" class="form-label">이메일</label>
+	<div class="invalid-feedback">이메일을 입력하세요.</div>
+</div>
