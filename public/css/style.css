@@ -1,0 +1,22 @@
+a:link {
+	text-decoration : none;
+  }
+   
+  a:visited {
+	text-decoration: none;
+  }
+   
+  a:hover {
+	text-decoration: none;
+  }
+   
+  a:active {
+	text-decoration: none;
+  }
+
+
+  /* .bi-heart, .bi-heart-fill{
+    font-size: 30px;
+    line-height: 30px;
+    color:crimson;
+  } */
